@@ -1,0 +1,85 @@
+@import "../App.scss";
+
+aside {
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    img {
+        width: 200px;
+        border-style: solid;
+        border-width: 10px;
+        border-radius: 50%;
+    }
+    &.frontend img {
+        border-color: $react;
+    }
+    &.data img {
+        border-color: $google-analytics;
+    }
+    &.environmental img {
+        border-color: $epm;
+    }
+}
+
+main {
+    padding: 10px;
+    h1 {
+        text-align: center;
+        color: $white;
+        strong {
+            &.frontend {
+                color: $react;
+            }
+            &.data {
+                color: $google-analytics;
+            }
+            &.environmental {
+                color: $epm;
+            }
+        }
+    }
+    span {
+        padding: 20px 0;
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            li {
+                padding: 10px;
+                svg {
+                    width: 30px;
+                    height: 30px;
+                }
+                &:nth-child(1) svg {
+                    fill: $react;
+                }
+                &:nth-child(2) svg {
+                    fill: $google-analytics;
+                }
+                &:nth-child(3) svg {
+                    fill: $epm;
+                }
+            }
+        }
+        h2 {
+            text-transform: capitalize;
+            text-align: center;
+            &.frontend {
+                color: $react;
+            }
+            &.data {
+                color: $google-analytics;
+            }
+            &.environmental {
+                color: $epm;
+            }
+        }
+    }
+    h3 {
+        padding: 10px;
+        text-align: center;
+        color: $white;
+    }
+}

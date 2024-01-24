@@ -1,0 +1,86 @@
+@import "../App.scss";
+
+header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    &.frontend {
+        svg g {
+            circle {
+                stroke: $react;
+            }
+            ellipse {
+                fill: $react;
+            }
+        }
+        h3 {
+            color: $react;
+        }
+    }
+    &.data {
+        svg g {
+            circle {
+                stroke: $google-analytics;
+            }
+            ellipse {
+                fill: $google-analytics;
+            }
+        }
+        h3 {
+            color: $google-analytics;
+        }
+    }
+    &.environmental {
+        svg g {
+            circle {
+                stroke: $epm;
+            }
+            ellipse {
+                fill: $epm;
+            }
+        }
+        h3 {
+            color: $epm;
+        }
+    }
+    svg {
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+    }
+}
+
+footer {
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+            padding: 10px;
+            svg {
+                width: 30px;
+                height: 30px;
+                opacity: 0.5;
+                fill: $white;
+                transition: 0.5s ease all;
+            }
+            &:nth-child(1) svg:hover {
+                opacity: 1;
+                fill: $instagram;
+            }
+            &:nth-child(2) svg:hover {
+                opacity: 1;
+                fill: $white;
+            }
+            &:nth-child(3) svg:hover {
+                opacity: 1;
+                fill: $linkedin;
+            }
+            &:nth-child(4) svg:hover {
+                opacity: 1;
+                fill: $white;
+            }
+        }
+    }
+}
