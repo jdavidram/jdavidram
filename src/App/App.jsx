@@ -5,7 +5,7 @@ import { Home } from "./Home/Home";
 import { Layout } from "./Layout/Layout";
 
 function App() {
-  const [mode, setMode] = useState("frontend developer");
+  const [mode, setMode] = useState("environmental engineer");
   return (
     <HashRouter>
       <Layout mode={mode}>

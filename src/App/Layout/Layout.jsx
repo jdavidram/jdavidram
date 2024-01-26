@@ -1,5 +1,6 @@
 import { Fragment } from "react";
 import { FaInstagram, FaThreads, FaLinkedin, FaGithub } from "react-icons/fa6";
+import { FaArrowDown } from "react-icons/fa6";
 import { ReactComponent as Logo } from "../logo.svg";
 import "./layout.scss";
 
@@ -7,8 +8,14 @@ function Layout({ children, mode }) {
     return (
         <Fragment>
             <header className={ mode.split(" ")[0] }>
-                <Logo />
-                <h3>jdavid.ram</h3>
+                <span>
+                    <Logo />
+                    <h3>jdavid.ram</h3>
+                </span>
+                <span>
+                    <FaArrowDown />
+                    <p><strong>Menu</strong></p>
+                </span>
             </header>
             { children }
             <footer>

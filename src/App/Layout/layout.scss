@@ -2,51 +2,82 @@
 
 header {
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-around;
     align-items: center;
-    &.frontend {
-        svg g {
-            circle {
-                stroke: $react;
-            }
-            ellipse {
-                fill: $react;
+    span {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        &:nth-child(1) {
+            svg {
+                width: 30px;
+                height: 30px;
+                margin: 10px;
             }
         }
-        h3 {
-            color: $react;
+        &:nth-child(2) {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            cursor: pointer;
+            svg {
+                margin-right: 10px;
+            }
         }
     }
-    &.data {
-        svg g {
-            circle {
-                stroke: $google-analytics;
+    &.frontend span {
+        &:nth-child(1) {
+            svg g {
+                circle {
+                    stroke: $react;
+                }
+                ellipse {
+                    fill: $react;
+                }
             }
-            ellipse {
-                fill: $google-analytics;
-            }
-        }
-        h3 {
-            color: $google-analytics;
-        }
-    }
-    &.environmental {
-        svg g {
-            circle {
-                stroke: $epm;
-            }
-            ellipse {
-                fill: $epm;
+            h3 {
+                color: $react;
             }
         }
-        h3 {
-            color: $epm;
+        &:nth-child(2) {
+            background-color: $react;
         }
     }
-    svg {
-        width: 30px;
-        height: 30px;
-        margin: 10px;
+    &.data span {
+        &:nth-child(1) {
+            svg g {
+                circle {
+                    stroke: $google-analytics;
+                }
+                ellipse {
+                    fill: $google-analytics;
+                }
+            }
+            h3 {
+                color: $google-analytics;
+            }
+        }
+        &:nth-child(2) {
+            background-color: $google-analytics;
+        }
+    }
+    &.environmental span {
+        &:nth-child(1) {
+            svg g {
+                circle {
+                    stroke: $epm;
+                }
+                ellipse {
+                    fill: $epm;
+                }
+            }
+            h3 {
+                color: $epm;
+            }
+        }
+        &:nth-child(2) {
+            background-color: $epm;
+        }
     }
 }
 

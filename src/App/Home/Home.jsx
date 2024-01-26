@@ -5,7 +5,21 @@ import "./home.scss";
 function Home({ mode, setMode }) {
     const today = new Date();
     var dir = "";
-    if (today.getDate() === 16 && today.getMonth() === 3) {
+    if (today.getDate() === 14 && today.getMonth() === 1) {
+        dir = "love";
+    } else if (today.getDate() === 16 && today.getMonth() === 3) {
+        dir = "celebrate";
+    } else if (today.getDate() === 31 && today.getMonth() === 9) {
+        dir = "ghost";
+    } else if (today.getDate() === 27 && today.getMonth() === 10) {
+        dir = "celebrate";
+    } else if (today.getDate() === 24 && today.getMonth() === 11) {
+        dir = "christmas";
+    } else if (today.getDate() === 25 && today.getMonth() === 11) {
+        dir = "christmas";
+    } else if (today.getDate() === 31 && today.getMonth() === 11) {
+        dir = "celebrate";
+    } else if (today.getDate() === 1 && today.getMonth() === 0) {
         dir = "celebrate";
     } else {
         dir = "hello";
