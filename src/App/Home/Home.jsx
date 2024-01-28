@@ -34,13 +34,19 @@ function Home({ mode, setMode }) {
                 <span>
                     <ul>
                         <li><FaReact onMouseOver={() => {
-                            setMode("frontend developer");
+                            let career = "frontend developer";
+                            localStorage.setItem("MODE", career);
+                            setMode(career);
                         }} /></li>
                         <li><FaChartLine onMouseOver={() => {
-                            setMode("data analyst");
+                            let career = "data analyst";
+                            localStorage.setItem("MODE", career);
+                            setMode(career);
                         }} /></li>
                         <li><FaLeaf onMouseOver={() => {
-                            setMode("environmental engineer");
+                            let career = "environmental engineer";
+                            localStorage.setItem("MODE", career);
+                            setMode(career);
                         }} /></li>
                     </ul>
                     <h2 className={ mode.split(" ")[0] }>{ mode }</h2>

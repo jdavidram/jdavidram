@@ -1,5 +1,46 @@
 @import "../App.scss";
 
+nav {
+    height: calc(100vh);
+    background-color: $black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    bottom: 100vh;
+    left: 0;
+    opacity: 0;
+    transition: all ease 0.5s;
+    &.frontend ul li a:hover {
+        color: $react;
+    }
+    &.data ul li a:hover {
+        color: $google-analytics;
+    }
+    &.environmental ul li a:hover {
+        color: $epm;
+    }
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        li {
+            padding: 10px;
+            a {
+                text-decoration: none;
+                text-transform: uppercase;
+                font-weight: 500;
+                font-size: 1.5em;
+                color: $white;
+                transition: all ease 0.5s;
+            }
+        }
+    }
+}
+
 header {
     display: flex;
     justify-content: space-around;

@@ -27,5 +27,9 @@ body {
     justify-content: space-between;
     align-items: stretch;
     flex-direction: column;
+    h1#error {
+      text-align: center;
+      color: #FFF;
+    }
   }
 }

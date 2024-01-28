@@ -1,18 +1,50 @@
 import { Fragment } from "react";
-import { FaInstagram, FaThreads, FaLinkedin, FaGithub } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
 import { FaArrowDown } from "react-icons/fa6";
+import { FaInstagram, FaThreads, FaLinkedin, FaGithub } from "react-icons/fa6";
 import { ReactComponent as Logo } from "../logo.svg";
 import "./layout.scss";
 
 function Layout({ children, mode }) {
+    const menu = {
+        "frontend": [
+            {"key": "0", "to": "/", "text": "home"},
+            {"key": "1", "to": "/about/frontend", "text": "about"}
+        ],
+        "data": [
+            {"key": "0", "to": "/", "text": "home"},
+            {"key": "1", "to": "/about/data", "text": "about"}
+        ],
+        "environmental": [
+            {"key": "0", "to": "/", "text": "home"},
+            {"key": "1", "to": "/about/environmental", "text": "about"}
+        ]
+    };
     return (
         <Fragment>
+            <nav id="navigator" className={ mode.split(" ")[0] }>
+                <ul>
+                    {menu[mode.split(" ")[0]].map((n) => (
+                        <li key={ n.key } onClick={() => {
+                            let nav = document.getElementById("navigator");
+                            nav.style.bottom = "100vh";
+                            nav.style.opacity = "0";
+                        }}>
+                            <NavLink to={ n.to }>{ n.text }</NavLink>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
             <header className={ mode.split(" ")[0] }>
                 <span>
                     <Logo />
                     <h3>jdavid.ram</h3>
                 </span>
-                <span>
+                <span onClick={() => {
+                    let nav = document.getElementById("navigator");
+                    nav.style.bottom = "0";
+                    nav.style.opacity = "1";
+                }}>
                     <FaArrowDown />
                     <p><strong>Menu</strong></p>
                 </span>
