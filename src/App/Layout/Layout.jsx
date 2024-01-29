@@ -5,27 +5,51 @@ import { FaInstagram, FaThreads, FaLinkedin, FaGithub } from "react-icons/fa6";
 import { ReactComponent as Logo } from "../logo.svg";
 import "./layout.scss";
 
-function Layout({ children, mode }) {
-    const menu = {
-        "frontend": [
-            {"key": "0", "to": "/", "text": "home"},
-            {"key": "1", "to": "/about/frontend", "text": "about"}
-        ],
-        "data": [
-            {"key": "0", "to": "/", "text": "home"},
-            {"key": "1", "to": "/about/data", "text": "about"}
-        ],
-        "environmental": [
-            {"key": "0", "to": "/", "text": "home"},
-            {"key": "1", "to": "/about/environmental", "text": "about"}
-        ]
-    };
+function Layout({ children, mode, lang }) {
+    var menu;
+    if (lang === "es") {
+        menu = {
+            "frontend": [
+                {"to": "/", "text": "home"},
+                {"to": "/about", "text": "sobre mi"},
+                {"to": "/portfolio", "text": "portafolio"}
+            ],
+            "data": [
+                {"to": "/", "text": "home"},
+                {"to": "/about", "text": "sobre mi"},
+                {"to": "/courses", "text": "cursos"}
+            ],
+            "environmental": [
+                {"to": "/", "text": "home"},
+                {"to": "/about", "text": "sobre mi"},
+                {"to": "/courses", "text": "cursos"}
+            ]
+        };
+    } else {
+        menu = {
+            "frontend": [
+                {"to": "/", "text": "home"},
+                {"to": "/about", "text": "about me"},
+                {"to": "/portfolio", "text": "portfolio"}
+            ],
+            "data": [
+                {"to": "/", "text": "home"},
+                {"to": "/about", "text": "about me"},
+                {"to": "/courses", "text": "courses"}
+            ],
+            "environmental": [
+                {"to": "/", "text": "home"},
+                {"to": "/about", "text": "about me"},
+                {"to": "/courses", "text": "courses"}
+            ]
+        };
+    }
     return (
         <Fragment>
             <nav id="navigator" className={ mode.split(" ")[0] }>
                 <ul>
                     {menu[mode.split(" ")[0]].map((n) => (
-                        <li key={ n.key } onClick={() => {
+                        <li key={ menu[mode.split(" ")[0]].indexOf(n) } onClick={() => {
                             let nav = document.getElementById("navigator");
                             nav.style.bottom = "100vh";
                             nav.style.opacity = "0";

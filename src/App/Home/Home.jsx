@@ -2,7 +2,7 @@ import { Fragment } from "react";
 import { FaReact, FaChartLine, FaLeaf } from "react-icons/fa6";
 import "./home.scss";
 
-function Home({ mode, setMode }) {
+function Home({ mode, setMode, lang }) {
     const today = new Date();
     var dir = "";
     if (today.getDate() === 14 && today.getMonth() === 1) {
@@ -24,13 +24,24 @@ function Home({ mode, setMode }) {
     } else {
         dir = "hello";
     }
+    const translate = {
+        "frontend developer": "frontend developer",
+        "data analyst": "analista de datos",
+        "environmental engineer": "ingeniero ambiental"
+    };
+    var hello;
+    if (lang === "es") {
+        hello = ["Hola, Soy", "Vivo en Medellin, Colombia"];
+    } else {
+        hello = ["Hi, I'm", "Based in Medellin, Colombia"];
+    }
     return (
         <Fragment>
             <aside className={ mode.split(" ")[0] }>
                 <img src={"./img/" + dir + ".webp"} alt="profile" />
             </aside>
-            <main>
-                <h1>Hi, I'm <strong className={ mode.split(" ")[0] }>JDAVID RAM</strong></h1>
+            <main id="home">
+                <h1>{ hello[0] } <strong className={ mode.split(" ")[0] }>JDAVID RAM</strong></h1>
                 <span>
                     <ul>
                         <li><FaReact onMouseOver={() => {
@@ -49,9 +60,9 @@ function Home({ mode, setMode }) {
                             setMode(career);
                         }} /></li>
                     </ul>
-                    <h2 className={ mode.split(" ")[0] }>{ mode }</h2>
+                    <h2 className={ mode.split(" ")[0] }>{ lang === "es" ? translate[mode] : mode }</h2>
                 </span>
-                <h3>Based in Medellin, Colombia</h3>
+                <h3>{ hello[1] }</h3>
             </main>
         </Fragment>
     );
