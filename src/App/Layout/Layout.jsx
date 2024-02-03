@@ -1,6 +1,6 @@
 import { Fragment } from "react";
 import { NavLink } from "react-router-dom";
-import { FaBars, FaSun, FaMoon, FaInstagram, FaThreads, FaLinkedin, FaGithub } from "react-icons/fa6";
+import { FaBars, FaSun, FaMoon, FaInstagram, FaThreads, FaLinkedin, FaGithub, FaLeaf } from "react-icons/fa6";
 import { ReactComponent as Logo } from "../logo.svg";
 import "./layout.scss";
 
@@ -59,6 +59,7 @@ function Layout({ children, theme, setTheme }) {
                         <h4>jdavid.ram</h4>
                     </span>
                     <nav>
+                        <FaLeaf />
                         <SwitchB theme={ theme } setTheme={ setTheme } />
                         <FaBars onClick={() => {showAside("show")}} />
                     </nav>

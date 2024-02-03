@@ -7,16 +7,15 @@ import { About } from "./About/About";
 
 function App() {
   const [theme, setTheme] = useState("dark");
-  const [mode, setMode] = useState("environmental engineer");
   return (
     <HashRouter>
       <Layout theme={ theme } setTheme={ setTheme }>
       <Routes>
         <Route path="/" element={
-          <Home theme={ theme } mode={ mode } setMode={ setMode } />
+          <Home theme={ theme } />
         } />
         <Route path="/about" element={
-          <About />
+          <About theme={ theme } />
         } />
         <Route path="/*" element={<h1 id="error">ERROR 404</h1>} />
       </Routes>

@@ -87,9 +87,8 @@ div#app {
             svg {
                 width: 20px;
                 height: 20px;
-                &:first-child {
-                    margin-right: 10px;
-                }
+                margin: 0 5px;
+                cursor: pointer;
             }
         }
     }
@@ -98,7 +97,7 @@ div#app {
         grid-row: 2 / 3;
         display: flex;
         justify-content: center;
-        align-items: flex-end;
+        align-items: center;
         ul {
             list-style-type: none;
             li {

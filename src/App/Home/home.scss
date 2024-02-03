@@ -1,19 +1,50 @@
 @import "../App.scss";
 
+$love: #ec0121;
+$celebrate: #7E30E1;
+$ghost: #FF6C22;
+
 main#home {
     display: flex;
     justify-content: space-around;
     align-items: center;
     flex-wrap: wrap;
-    overflow: scroll;
-    div.hello {
+    &.dark {
+        @include scrollbar($main, $black);
+        article h1, h2, h3 {
+            color: $white;
+        }
+    }
+    &.light {
+        @include scrollbar($main, $white);
+        article h1, h2, h3 {
+            color: $black;
+        }
+    }
+    div#sticker {
         display: flex;
         justify-content: center;
         align-items: center;
+        &.hello img {
+            border-color: $main;
+        }
+        &.love img {
+            border-color: $love;
+        }
+        &.celebrate img {
+            border-color: $celebrate;
+        }
+        &.ghost img {
+            border-color: $ghost;
+        }
+        &.christmas img {
+            border-color: $white;
+        }
         img {
             width: 200px;
             height: 200px;
-            border: 10px solid $main;
+            border-width: 10px;
+            border-style: solid;
             border-radius: 110px;
         }
     }
@@ -22,16 +53,6 @@ main#home {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        &.dark {
-            h1, h2, h3 {
-                color: $white;
-            }
-        }
-        &.light {
-            h1, h2, h3 {
-                color: $black;
-            }
-        }
         h1 strong {
             color: $main;
         }
@@ -41,9 +62,6 @@ main#home {
                 height: 30px;
                 margin: 10px;
                 &:nth-child(1) {
-                    fill: $react;
-                }
-                &:nth-child(2) {
                     fill: $epm;
                 }
             }

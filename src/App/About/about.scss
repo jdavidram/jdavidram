@@ -1,9 +1,151 @@
 @import "../App.scss";
 
 main#about {
+    &.dark {
+        @include scrollbar($main, $black);
+        section {
+            &.header article {
+                h2 {
+                    color: $white;
+                }
+                p {
+                    color: $white;
+                }
+            }
+            &.skills article {
+                p {
+                    color: $white;
+                }
+                ul li svg {
+                    fill: $white;
+                }
+            }
+        }
+    }
+    &.light {
+        @include scrollbar($main, $white);
+        section {
+            &.header article {
+                h2 {
+                    color: $black;
+                }
+                p {
+                    color: $black;
+                }
+            }
+            &.skills article {
+                p {
+                    color: $black;
+                }
+                ul li svg {
+                    fill: $black;
+                }
+            }
+        }
+    }
     section {
-        h1 {
-            color: $white;
+        &.header {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap-reverse;
+            padding: 20px 0;
+            div#sticker {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                &.engineer img {
+                    border-color: $epm;
+                }
+                img {
+                    width: 200px;
+                    height: 200px;
+                    border-width: 10px;
+                    border-style: solid;
+                    border-radius: 110px;
+                }
+            }
+            article {
+                max-width: 400px;
+                padding: 20px;
+                h2 {
+                    margin: 10px;
+                    text-align: center;
+                    strong {
+                        text-transform: capitalize;
+                        color: $epm;
+                    }
+                }
+                p {
+                    margin: 10px;
+                    text-align: center;
+                    strong {
+                        text-transform: capitalize;
+                        color: $epm;
+                    }
+                }
+            }
+        }
+        &.skills {
+            h1 {
+                margin: 10px;
+                padding: 10px 20px;
+                border-left: 2px solid $main;
+                border-bottom: 2px solid $main;
+                color: $main;
+            }
+            article {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                flex-wrap: wrap;
+                & > p {
+                    max-width: 300px;
+                    margin: 10px;
+                    text-align: center;
+                    strong {
+                        text-transform: capitalize;
+                        color: $main;
+                    }
+                }
+                ul {
+                    list-style-type: none;
+                    margin-left: 20px;
+                    li {
+                        display: flex;
+                        justify-content: flex-start;
+                        align-items: center;
+                        svg {
+                            width: 30px;
+                            height: 30px;
+                            margin: 10px;
+                        }
+                        p {
+                            text-transform: capitalize;
+                        }
+                    }
+                }
+            }
+        }
+        &.experience {
+            padding: 20px 0;
+            h1 {
+                margin: 10px;
+                padding: 10px 20px;
+                border-left: 2px solid $epm;
+                border-bottom: 2px solid $epm;
+                color: $epm;
+            }
+        }
+        &.education {
+            padding: 20px 0;
+            h1 {
+                margin: 10px;
+                padding: 10px 20px;
+                border-left: 2px solid $main;
+                border-bottom: 2px solid $main;
+                color: $main;
+            }
         }
     }
 }

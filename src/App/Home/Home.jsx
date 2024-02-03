@@ -1,19 +1,44 @@
-import { FaReact, FaLeaf } from "react-icons/fa6";
+import { FaLeaf } from "react-icons/fa6";
 import "./home.scss";
 
-function Home({ theme, mode, setMode }) {
+function sticker() {
+    const today = new Date();
+    var src;
+    if (today.getDate() === 14 && today.getMonth() === 1) {
+        src = "love";
+    } else if (today.getDate() === 16 && today.getMonth() === 3) {
+        src = "celebrate";
+    } else if (today.getDate() === 31 && today.getMonth() === 9) {
+        src = "ghost";
+    } else if (today.getDate() === 27 && today.getMonth() === 10) {
+        src = "celebrate";
+    } else if (today.getDate() === 24 && today.getMonth() === 11) {
+        src = "christmas";
+    } else if (today.getDate() === 25 && today.getMonth() === 11) {
+        src = "christmas";
+    } else if (today.getDate() === 31 && today.getMonth() === 11) {
+        src = "celebrate";
+    } else if (today.getDate() === 1 && today.getMonth() === 0) {
+        src = "celebrate";
+    } else {
+        src = "hello";
+    }
+    return (src);
+}
+
+function Home({ theme }) {
+    var img = sticker();
     return (
-        <main id="home">
-            <div className="hello">
-                <img src="./img/hello.webp" alt="hello" />
+        <main id="home" className={ theme }>
+            <div id="sticker" className={ img }>
+                <img src={"./img/" + img + ".webp"} alt={ img } />
             </div>
-            <article className={ theme }>
+            <article>
                 <h1>Hi I'm <strong>JDavid Ram</strong></h1>
                 <span>
-                    <FaReact onMouseOver={() => setMode("frontend developer")} />
-                    <FaLeaf onMouseOver={() => setMode("environmental engineer")} />
+                    <FaLeaf />
                 </span>
-                <h2>{ mode }</h2>
+                <h2>environmental engineer</h2>
                 <h3>Based in Medellin, Colombia</h3>
             </article>
         </main>
