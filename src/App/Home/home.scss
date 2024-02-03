@@ -1,65 +1,49 @@
 @import "../App.scss";
 
-aside {
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    img {
-        width: 200px;
-        border-style: solid;
-        border-width: 10px;
-        border-radius: 50%;
-    }
-    &.frontend img {
-        border-color: $react;
-    }
-    &.data img {
-        border-color: $google-analytics;
-    }
-    &.environmental img {
-        border-color: $epm;
-    }
-}
-
 main#home {
-    padding: 10px;
-    h1 {
-        text-align: center;
-        color: $white;
-        strong {
-            &.frontend {
-                color: $react;
-            }
-            &.data {
-                color: $google-analytics;
-            }
-            &.environmental {
-                color: $epm;
-            }
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: scroll;
+    div.hello {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        img {
+            width: 200px;
+            height: 200px;
+            border: 10px solid $main;
+            border-radius: 110px;
         }
     }
-    span {
-        padding: 20px 0;
-        ul {
-            list-style-type: none;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            li {
-                padding: 10px;
-                svg {
-                    width: 30px;
-                    height: 30px;
-                    cursor: pointer;
-                }
-                &:nth-child(1) svg {
+    article {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        &.dark {
+            h1, h2, h3 {
+                color: $white;
+            }
+        }
+        &.light {
+            h1, h2, h3 {
+                color: $black;
+            }
+        }
+        h1 strong {
+            color: $main;
+        }
+        span {
+            svg {
+                width: 30px;
+                height: 30px;
+                margin: 10px;
+                &:nth-child(1) {
                     fill: $react;
                 }
-                &:nth-child(2) svg {
-                    fill: $google-analytics;
-                }
-                &:nth-child(3) svg {
+                &:nth-child(2) {
                     fill: $epm;
                 }
             }
@@ -67,20 +51,6 @@ main#home {
         h2 {
             text-transform: capitalize;
             text-align: center;
-            &.frontend {
-                color: $react;
-            }
-            &.data {
-                color: $google-analytics;
-            }
-            &.environmental {
-                color: $epm;
-            }
         }
-    }
-    h3 {
-        padding: 10px;
-        text-align: center;
-        color: $white;
     }
 }

@@ -1,160 +1,112 @@
 @import "../App.scss";
 
-nav {
+aside {
+    width: calc(100vw - 50px);
     height: calc(100vh);
     display: flex;
     justify-content: center;
     align-items: center;
-    position: fixed;
-    right: 0;
-    bottom: 100vh;
-    left: 0;
-    opacity: 0;
-    z-index: 1;
-    transition: all ease 0.5s;
-    &.frontend {
-        background-color: $react;
-    }
-    &.data {
-        background-color: $google-analytics;
-    }
-    &.environmental {
-        background-color: $epm;
-    }
     ul {
         list-style-type: none;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
         li {
-            padding: 10px;
+            padding: 5px 10px;
             a {
                 text-decoration: none;
                 text-transform: uppercase;
-                font-weight: 500;
-                font-size: 1.5em;
-                color: $black;
-                transition: all ease 0.5s;
-                &:hover {
-                    color: $white;
-                }
+                color: $white;
             }
         }
     }
 }
 
-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    span {
+div#app {
+    width: calc(100vw);
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 50px 1fr;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 0;
+    transition: all ease 0.5s;
+    &.dark {
+        background-color: $black;
+        header nav svg {
+            fill: $black;
+        }
+        footer ul li a svg {
+            fill: $white;
+        }
+    }
+    &.light {
+        background-color: $white;
+        header nav svg {
+            fill: $white;
+        }
+        footer ul li a svg {
+            fill: $black;
+        }
+    }
+    header {
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         align-items: center;
-        &:nth-child(1) {
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             svg {
                 width: 30px;
                 height: 30px;
                 margin: 10px;
+                g {
+                    circle {
+                        stroke: $main;
+                    }
+                    ellipse {
+                        fill: $main;
+                    }
+                }
+            }
+            h4 {
+                font-size: 1.1em;
+                color: $main;
             }
         }
-        &:nth-child(2) {
+        nav {
             margin: 10px;
             padding: 10px;
             border-radius: 10px;
-            cursor: pointer;
+            background-color: $main;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             svg {
-                margin-right: 10px;
+                width: 20px;
+                height: 20px;
+                &:first-child {
+                    margin-right: 10px;
+                }
             }
         }
     }
-    &.frontend span {
-        &:nth-child(1) {
-            svg g {
-                circle {
-                    stroke: $react;
-                }
-                ellipse {
-                    fill: $react;
-                }
-            }
-            h3 {
-                color: $react;
-            }
-        }
-        &:nth-child(2) {
-            background-color: $react;
-        }
-    }
-    &.data span {
-        &:nth-child(1) {
-            svg g {
-                circle {
-                    stroke: $google-analytics;
-                }
-                ellipse {
-                    fill: $google-analytics;
-                }
-            }
-            h3 {
-                color: $google-analytics;
-            }
-        }
-        &:nth-child(2) {
-            background-color: $google-analytics;
-        }
-    }
-    &.environmental span {
-        &:nth-child(1) {
-            svg g {
-                circle {
-                    stroke: $epm;
-                }
-                ellipse {
-                    fill: $epm;
-                }
-            }
-            h3 {
-                color: $epm;
-            }
-        }
-        &:nth-child(2) {
-            background-color: $epm;
-        }
-    }
-}
-
-footer {
-    ul {
-        list-style-type: none;
+    footer {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
         display: flex;
         justify-content: center;
-        align-items: center;
-        li {
-            padding: 10px;
-            svg {
-                width: 30px;
-                height: 30px;
-                opacity: 0.5;
-                fill: $white;
-                transition: 0.5s ease all;
-            }
-            &:nth-child(1) svg:hover {
-                opacity: 1;
-                fill: $instagram;
-            }
-            &:nth-child(2) svg:hover {
-                opacity: 1;
-                fill: $white;
-            }
-            &:nth-child(3) svg:hover {
-                opacity: 1;
-                fill: $linkedin;
-            }
-            &:nth-child(4) svg:hover {
-                opacity: 1;
-                fill: $white;
+        align-items: flex-end;
+        ul {
+            list-style-type: none;
+            li {
+                padding: 10px;
+                a svg {
+                    width: 30px;
+                    height: 30px;
+                }
             }
         }
     }

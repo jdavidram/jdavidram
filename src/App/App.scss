@@ -4,11 +4,25 @@ $main: #0B60B0;
 $second: #40A2D8;
 
 $react: #61DBFB;
-$google-analytics: #F9AB00;
 $epm: #7ED321;
 
-$instagram: #F8334A;
-$linkedin: #0072B1;
+@mixin scrollbar($thumb, $back) {
+  overflow: scroll;
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumb;
+    border-radius: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: $back;
+  }
+  &::-webkit-scrollbar-corner {
+    background-color: $back;
+  }
+}
 
 * {
   margin: 0;
@@ -17,32 +31,13 @@ $linkedin: #0072B1;
 }
 
 body {
-  background-color: $black;
-  overflow: scroll;
-  &::-webkit-scrollbar {
-    width: 8px;
-    height: 8px;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: $main;
-    border-radius: 4px;
-  }
-  &::-webkit-scrollbar-track {
-    background-color: $black;
-  }
-  &::-webkit-scrollbar-corner {
-    background-color: $black;
-  }
+  width: calc(100vw);
+  height: calc(100vh);
+  overflow: hidden;
   div#root {
-    min-height: calc(100vh - 8px);
-    background-color: $black;
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    flex-direction: column;
-    h1#error {
-      text-align: center;
-      color: #FFF;
-    }
+    width: calc(100vw);
+    height: calc(100vh);
+    overflow: hidden;
+    background-color: $main;
   }
 }

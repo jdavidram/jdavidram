@@ -6,24 +6,17 @@ import { Home } from "./Home/Home";
 import { About } from "./About/About";
 
 function App() {
-  let career;
-  if (!localStorage.getItem("MODE")) {
-    career = "environmental engineer";
-    localStorage.setItem("MODE", career);
-  } else {
-    career = localStorage.getItem("MODE");
-  }
-  const [mode, setMode] = useState(career);
-  const lang = navigator.language.split("-")[0];
+  const [theme, setTheme] = useState("dark");
+  const [mode, setMode] = useState("environmental engineer");
   return (
     <HashRouter>
-      <Layout mode={mode} lang={lang}>
+      <Layout theme={ theme } setTheme={ setTheme }>
       <Routes>
         <Route path="/" element={
-          <Home mode={ mode } setMode={ setMode } lang={lang} />
+          <Home theme={ theme } mode={ mode } setMode={ setMode } />
         } />
         <Route path="/about" element={
-          <About mode={ mode } />
+          <About />
         } />
         <Route path="/*" element={<h1 id="error">ERROR 404</h1>} />
       </Routes>
