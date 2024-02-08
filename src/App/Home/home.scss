@@ -53,8 +53,10 @@ main#home {
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        h1 strong {
-            color: $main;
+        h1 {
+            strong {
+                color: $main;
+            }
         }
         span {
             svg {
@@ -69,6 +71,17 @@ main#home {
         h2 {
             text-transform: capitalize;
             text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg {
+                width: 30px;
+                height: 30px;
+                margin-right: 10px;
+                &:nth-child(1) {
+                    fill: $epm;
+                }
+            }
         }
     }
 }

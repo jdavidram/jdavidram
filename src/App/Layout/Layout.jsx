@@ -8,7 +8,12 @@ function showAside(toDo) {
     let app = document.getElementById("app");
     if (toDo === "show") {
         app.style.top = "10px";
-        let xyz = window.screen.width - 50;
+        let xyz;
+        if (window.screen.width < 350) {
+            xyz = window.screen.width - 50;
+        } else {
+            xyz = 300;
+        }
         app.style.left = xyz.toString() + "px";
         app.style.bottom = "10px";
         app.style.borderRadius = "20px";
@@ -47,9 +52,9 @@ function Layout({ children, theme, setTheme }) {
                 <ul>
                     <li><NavLink to="/" onClick={() => {showAside("hide")}}>home</NavLink></li>
                     <li><NavLink to="/about" onClick={() => {showAside("hide")}}>about me</NavLink></li>
-                    <li><NavLink to="/courses" onClick={() => {showAside("hide")}}>courses</NavLink></li>
+                    {/* <li><NavLink to="/courses" onClick={() => {showAside("hide")}}>courses</NavLink></li>
                     <li><NavLink to="/portfolio" onClick={() => {showAside("hide")}}>portfolio</NavLink></li>
-                    <li><NavLink to="/contact" onClick={() => {showAside("hide")}}>contact</NavLink></li>
+                    <li><NavLink to="/contact" onClick={() => {showAside("hide")}}>contact</NavLink></li> */}
                 </ul>
             </aside>
             <div id="app" className={ theme }>
@@ -59,7 +64,7 @@ function Layout({ children, theme, setTheme }) {
                         <h4>jdavid.ram</h4>
                     </span>
                     <nav>
-                        <FaLeaf />
+                        <FaLeaf className="env" />
                         <SwitchB theme={ theme } setTheme={ setTheme } />
                         <FaBars onClick={() => {showAside("show")}} />
                     </nav>

@@ -35,10 +35,8 @@ function Home({ theme }) {
             </div>
             <article>
                 <h1>Hi I'm <strong>JDavid Ram</strong></h1>
-                <span>
-                    <FaLeaf />
-                </span>
-                <h2>environmental engineer</h2>
+                {/* <span><FaLeaf /></span> */}
+                <h2><FaLeaf /> environmental engineer</h2>
                 <h3>Based in Medellin, Colombia</h3>
             </article>
         </main>
