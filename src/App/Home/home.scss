@@ -6,8 +6,9 @@ $ghost: #FF6C22;
 
 main#home {
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
+    flex-direction: column;
     flex-wrap: wrap;
     &.dark {
         @include scrollbar($main, $black);
@@ -22,6 +23,7 @@ main#home {
         }
     }
     div#sticker {
+        margin: 20px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -54,34 +56,24 @@ main#home {
         justify-content: center;
         align-items: center;
         h1 {
+            padding: 5px 0;
             strong {
                 color: $main;
             }
         }
-        span {
-            svg {
-                width: 30px;
-                height: 30px;
-                margin: 10px;
-                &:nth-child(1) {
-                    fill: $epm;
-                }
-            }
-        }
         h2 {
+            padding: 5px 0;
             text-transform: capitalize;
             text-align: center;
             display: flex;
             justify-content: center;
             align-items: center;
-            svg {
-                width: 30px;
-                height: 30px;
-                margin-right: 10px;
-                &:nth-child(1) {
-                    fill: $epm;
-                }
+            strong {
+                color: $epm;
             }
+        }
+        h3 {
+            padding: 5px 0;
         }
     }
 }

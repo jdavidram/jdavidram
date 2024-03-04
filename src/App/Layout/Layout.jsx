@@ -64,7 +64,6 @@ function Layout({ children, theme, setTheme }) {
                         <h4>jdavid.ram</h4>
                     </span>
                     <nav>
-                        <FaLeaf className="env" />
                         <SwitchB theme={ theme } setTheme={ setTheme } />
                         <FaBars onClick={() => {showAside("show")}} />
                     </nav>
