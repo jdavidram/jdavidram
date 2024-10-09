@@ -1,0 +1,36 @@
+@import "../color";
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    div#hello {
+        width: 100px;
+        height: 100px;
+        padding: 20px;
+        border: 5px solid $main;
+        border-radius: 50%;
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    span {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h1 {
+            text-align: center;
+            color: $black;
+            strong {
+                color: $main;
+            }
+        }
+        h2 {
+            text-align: center;
+            color: $black;
+        }
+    }
+}
