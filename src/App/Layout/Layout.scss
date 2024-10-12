@@ -1,0 +1,103 @@
+@import "../color";
+
+header {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    span.nav {
+        margin: 10px;
+        display: none;
+        svg {
+            width: 30px;
+            height: 30px;
+            color: $white;
+            &:hover {
+                color: $main;
+            }
+        }
+    }
+    span.logo {
+        margin: 0 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+            width: 30px;
+            height: 30px;
+            margin: 10px;
+        }
+        h3 {
+            color: $main;
+        }
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            li {
+                padding: 0 5px;
+                a {
+                    text-decoration: none;
+                    color: $white;
+                    transition: 0.5s all ease;
+                    &:hover {
+                        color: $main;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header {
+        justify-content: space-between;
+        span.nav {
+            display: block;
+        }
+        nav {
+            display: none;
+        }
+    }
+}
+
+footer {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    ul {
+        list-style-type: none;
+        li {
+            padding: 10px;
+            a {
+                text-decoration: none;
+                svg {
+                    width: 30px;
+                    height: 30px;
+                    color: $white;
+                    transition: 0.5s all ease;
+                    &:hover {
+                        color: $main;
+                    }
+                }
+            }
+        }
+    }
+}
+
+main {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    border-radius: 20px 0 0 0;
+    overflow: hidden;
+    background-color: $grey;
+}
