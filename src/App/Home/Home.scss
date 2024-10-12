@@ -1,0 +1,52 @@
+@import "../color";
+
+main {
+    overflow: scroll;
+    section {
+        width: calc(100vw - 50px);
+        height: calc(100vh - 55px);
+        border-bottom: 5px solid $black;
+        &.hello {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            div#hello {
+                width: 150px;
+                height: 150px;
+                margin: 20px;
+                padding: 10px;
+                border: 5px solid $main;
+                border-radius: 50%;
+                img {
+                    width: 150px;
+                    height: 150px;
+                }
+            }
+            span {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                h1 {
+                    padding: 10px;
+                    text-align: center;
+                    color: $white;
+                    strong {
+                        color: $main;
+                    }
+                }
+                h2 {
+                    padding: 10px;
+                    text-align: center;
+                    color: $white;
+                }
+            }
+        }
+        &.about {
+            h1 {
+                color: $main;
+            }
+        }
+    }
+}
