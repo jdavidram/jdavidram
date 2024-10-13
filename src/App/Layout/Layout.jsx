@@ -1,13 +1,14 @@
 import { FaBars, FaInstagram, FaLinkedin, FaGithub, FaThreads } from "react-icons/fa6";
+import { NavLink } from "react-router-dom";
+import { useState } from "react";
 import { ReactComponent as Logo } from "../logo.svg";
 import "./Layout.scss";
-import { useState } from "react";
 
 function Layout({ children }) {
     const [left, setLeft] = useState("0px");
     function showNav(left) {
         var universe = document.getElementById("root");
-        if (left === "0px") {
+        if (left === "0px" || universe.style.left != "calc(100vw - 50px)") {
             universe.style.left = "calc(100vw - 50px)";
             universe.style.borderRadius = "10px";
             setLeft("calc(100vw - 50px)");
@@ -29,7 +30,12 @@ function Layout({ children }) {
             </span>
             <nav>
                 <ul>
-                    <li><a href="#">Home</a></li>
+                    <li>
+                        <NavLink to="/">Home</NavLink>
+                    </li>
+                    <li>
+                        <NavLink to="/about">About</NavLink>
+                    </li>
                 </ul>
             </nav>
         </header>
