@@ -5,28 +5,28 @@ import "./Layout.scss";
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function Layout() {
+function Layout({ children }) {
     const [dir, setDir] = useState("right");
     const trans = {"right": "left", "left": "right"};
     return (
         <>
         <aside>
             <ul>
-                <li>
+                <li onClick={ () => setDir(trans[dir]) }>
                     <NavLink to="/">Home</NavLink>
                 </li>
-                <li>
-                    <NavLink to="/">About</NavLink>
+                <li onClick={ () => setDir(trans[dir]) }>
+                    <NavLink to="/about">About</NavLink>
                 </li>
-                <li>
-                    <NavLink to="/">Projects</NavLink>
+                <li onClick={ () => setDir(trans[dir]) }>
+                    <NavLink to="/projects">Projects</NavLink>
                 </li>
-                <li>
-                    <NavLink to="/">Contact</NavLink>
+                <li onClick={ () => setDir(trans[dir]) }>
+                    <NavLink to="#">Contact</NavLink>
                 </li>
             </ul>
         </aside>
-        <main className={ dir }>
+        <div id="universe" className={ dir }>
             <nav>
                 <span>
                     <Logo />
@@ -39,28 +39,29 @@ function Layout() {
                         <FaRegArrowAltCircleRight className={ dir } onClick={ () => setDir(trans[dir]) } />
                     </li>
                     <li>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a href="https://github.com/jdavidram" target="_blank" rel="noopener noreferrer">
                             <FaGithub />
                         </a>
                     </li>
                     <li>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.linkedin.com/in/david-ramirez-rodriguez/" target="_blank" rel="noopener noreferrer">
                             <FaLinkedin />
                         </a>
                     </li>
                     <li>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.instagram.com/jdavid.ram/profilecard/" target="_blank" rel="noopener noreferrer">
                             <FaInstagram />
                         </a>
                     </li>
                     <li>
-                        <a href="#" target="_blank" rel="noopener noreferrer">
+                        <a href="https://www.threads.net/@jdavid.ram?igshid=NTc4MTIwNjQ2YQ%3D%3D" target="_blank" rel="noopener noreferrer">
                             <FaThreads />
                         </a>
                     </li>
                 </ul>
             </footer>
-        </main>
+            { children } {/* TODO DEBE IR DENTRO DE UNA ETIQUETA MAIN */}
+        </div>
         </>
     );
 }
