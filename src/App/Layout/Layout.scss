@@ -1,0 +1,98 @@
+@import "../color";
+
+nav {
+    width: calc(100vw - 50px);
+    height: calc(100vh);
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    a {
+        margin: 20px 40px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        text-decoration: none;
+        font-size: calc((100vh/4) - 40px - 40px);
+        color: $black;
+        transition: 0.5s all ease;
+        &:hover {
+            color: $main;
+        }
+    }
+}
+
+main {
+    width: calc(100vw);
+    height: calc(100vh);
+    position: fixed;
+    top: 0;
+    background-color: $black;
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    grid-template-rows: 50px 1fr;
+    transition: 0.5s all ease;
+    &.right {
+        left: 0;
+        border-radius: 0px;
+        header span svg {
+            transform: rotate(0deg);
+        }
+    }
+    &.left {
+        left: calc(100vw - 50px);
+        border-radius: 20px;
+        header span svg {
+            transform: rotate(-180deg);
+        }
+    }
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        grid-column: 1 / 3;
+        grid-row: 1 / 2;
+        span {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg {
+                width: 30px;
+                height: 30px;
+                margin: 10px;
+                color: $main;
+                transition: 0.5s all ease;
+                &#arrow {
+                    cursor: pointer;
+                }
+            }
+            h4 {
+                margin: 0 20px 0 0;
+                color: $main;
+            }
+        }
+    }
+    footer {
+        ul {
+            list-style-type: none;
+            height: calc(100vh - 50px);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            li {
+                a {
+                    padding: 10px;
+                    svg {
+                        width: 30px;
+                        height: 30px;
+                        color: $grey;
+                        transition: 0.5s all ease;
+                        &:hover {
+                            color: $main;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
