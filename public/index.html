@@ -12,9 +12,40 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
     <link rel="icon" href="%PUBLIC_URL%/favicon.svg" />
     <title>jdavid.ram</title>
+    <script>
+      function moveArrow() {
+        let root = document.getElementById("root");
+        let arrow = document.getElementById("arrow");
+        if (arrow.style.transform !== "rotate(-180deg)") {
+          arrow.style.transform = "rotate(-180deg)";
+          root.style.left = "calc(100vw - 60px)";
+          root.style.borderRadius = "30px";
+        } else {
+          arrow.style.transform = "rotate(0deg)";
+          root.style.left = "0px";
+          root.style.borderRadius = "0px";
+        }
+      }
+    </script>
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <aside>
+      <ul>
+        <li>
+          <a href="#/" onClick="moveArrow()">home</a>
+        </li>
+        <li>
+          <a href="#/about" onClick="moveArrow()">about</a>
+        </li>
+        <li>
+          <a href="#/projects" onClick="moveArrow()">projects</a>
+        </li>
+        <li>
+          <a href="#/contact" onClick="moveArrow()">contact</a>
+        </li>
+      </ul>
+    </aside>
     <div id="root"></div>
   </body>
 </html>

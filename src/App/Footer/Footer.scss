@@ -1,0 +1,26 @@
+@import "../color";
+
+footer {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    ul {
+    list-style-type: none;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    li {
+        padding: 10px;
+        a {
+        text-decoration: none;
+        font-size: 40px;
+        color: $grey;
+        transition: 0.5s all ease;
+        &:hover {
+            color: $main;
+        }
+        }
+    }
+    }
+}
