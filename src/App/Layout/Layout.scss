@@ -1,0 +1,80 @@
+@import "../color";
+
+header {
+    grid-column: 1 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    span.logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        svg {
+            width: 30px;
+            height: 30px;
+            margin: 10px;
+            g {
+                circle {
+                    stroke: $main;
+                }
+                ellipse {
+                    fill: $main;
+                }
+            }
+        }
+        p {
+            font-size: 1.5em;
+            font-weight: bolder;
+            color: $main;
+        }
+    }
+    nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            li {
+                padding: 10px;
+                a {
+                    text-decoration: none;
+                    color: $main;
+                }
+            }
+        }
+        span.menu {
+            svg {
+                width: 30px;
+                height: 30px;
+                margin: 10px;
+                color: $main;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+footer {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    ul {
+        height: calc(100vh - 50px);
+        list-style-type: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        li {
+            padding: 10px;
+            svg {
+                width: 30px;
+                height: 30px;
+                fill: $main;
+            }
+        }
+    }
+}
