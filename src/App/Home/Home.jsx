@@ -1,10 +1,12 @@
 import { Layout } from "../Layout/Layout";
 import hello from "./hello.webp";
 import "./Home.scss";
-import { TbTriangleSquareCircleFilled } from "react-icons/tb";
+import { FaChartArea, FaWaveSquare, FaChartPie, FaWater, FaCloudShowersWater, FaPython, FaReact } from "react-icons/fa6";
+import { TbTriangleSquareCircleFilled, TbAxisY } from "react-icons/tb";
+import { GiHotSurface, GiComputing } from "react-icons/gi";
+import { LuTangent, LuDam } from "react-icons/lu";
 import { GrGraphQl } from "react-icons/gr";
-import { FaChartArea, FaWaveSquare, FaChartPie, FaWater } from "react-icons/fa6";
-
+import { SiArcgis, SiQgis } from "react-icons/si";
 
 function Header({ course }) {
     const msg = "La materia no se pierde ni se destruye, se gana este semestre";
@@ -17,6 +19,7 @@ function Header({ course }) {
             </div>
             <aside>
                 <h1>¡Aprende <strong>{ course }</strong> sin morir en el intento!</h1>
+                <p>Contactanos y pide tu asesoría personalizada o grupal, en el horario que quieras, como quieras y no te dejes vencer por las materias de la U</p>
             </aside>
         </header>
     );
@@ -40,21 +43,51 @@ function Courses({ courses }) {
 
 function Home() {
     const process = [{
-        icon: <GrGraphQl />,
-        name: "Algebra lineal"
-    }, {
         icon: <FaChartPie />,
         name: "Estadistica"
     }, {
+        icon: <GiComputing />,
+        name: "Metodos numericos"
+    }, {
+        icon: <GiHotSurface />,
+        name: "Fenomenos de transporte"
+    }, {
         icon: <FaWater />,
         name: "Mecánica de fluidos"
+    }, {
+        icon: <SiArcgis />,
+        name: "Sistemas de información geografica - ArcGIS"
+    }, {
+        icon: <SiQgis />,
+        name: "Sistemas de información geografica - QGIS"
+    }, {
+        icon: <LuDam />,
+        name: "Hidraulica"
+    }, {
+        icon: <FaCloudShowersWater />,
+        name: "Hidrología"
+    }, {
+        icon: <FaPython />,
+        name: "Fundamentos de programación - Python"
+    }, {
+        icon: <FaReact />,
+        name: "Fundamentos de programación - JavaScript"
     }];
     const courses = [{
         icon: <TbTriangleSquareCircleFilled />,
         name: "Matemáticas básicas"
     }, {
+        icon: <LuTangent />,
+        name: "Cálculo diferencial"
+    }, {
         icon: <FaChartArea />,
         name: "Cálculo integral"
+    }, {
+        icon: <TbAxisY />,
+        name: "Geometría vectorial y análitica"
+    }, {
+        icon: <GrGraphQl />,
+        name: "Algebra lineal"
     }, {
         icon: <FaWaveSquare />,
         name: "Ecuaciones diferenciales"

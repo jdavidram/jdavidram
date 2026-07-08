@@ -3,6 +3,8 @@ import { ReactComponent as Logo } from "../logo.svg";
 import "./Layout.scss";
 
 function Nav() {
+    let cel = "3113578185";
+    let msg = "Hola\nQuisiera agendar una clase particular de";
     return (
         <nav>
             <span>
@@ -10,7 +12,7 @@ function Nav() {
                 <h1>jdavid.ram</h1>
                 <p>Tu mejor apoyo en la U</p>
             </span>
-            <a href="https://wa.me/573113578185?text=Hola%20Quiero%20agendar" target="_blank" rel="noopener noreferrer">
+            <a href={ "https://wa.me/57" + cel + "?text=" + msg.replace(" ", "%20").replace("\n", "%0A") } target="_blank" rel="noopener noreferrer">
                 <p>Contacto</p>
             </a>
         </nav>
